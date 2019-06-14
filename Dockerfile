@@ -9,8 +9,6 @@ RUN apt-get update && \
 
 ADD squid.conf /etc/squid/squid.conf
 RUN echo "root:ssbiY3prCJLxU" >> /etc/squid/passwd
-RUN mkdir /var/cache/squid
-RUN chown -R proxy:proxy /var/cache/squid
 RUN /usr/sbin/squid3 -N -z -F
 
 EXPOSE 3128
